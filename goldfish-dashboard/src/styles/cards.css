@@ -1,0 +1,58 @@
+.cards {
+
+  display:grid;
+
+  gap:20px;
+
+  grid-template-columns:
+  repeat(
+    auto-fit,
+    minmax(280px,1fr)
+  );
+}
+
+.card {
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    160deg,
+    #111827,
+    #1e293b
+  );
+
+  border-radius:18px;
+
+  padding:24px;
+
+  transition:.3s;
+
+  border:
+  1px solid
+  rgba(255,255,255,.05);
+}
+
+.card:hover {
+
+  transform:
+  translateY(-4px);
+}
+
+.card p {
+
+  color:#94a3b8;
+
+  text-transform:uppercase;
+
+  font-size:12px;
+}
+
+.card h2 {
+
+  margin-top:12px;
+
+  font-size:34px;
+}

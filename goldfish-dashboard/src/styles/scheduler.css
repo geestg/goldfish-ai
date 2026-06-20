@@ -1,0 +1,122 @@
+.scheduler-form {
+
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:20px;
+}
+
+.schedule-list {
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+}
+
+.schedule-item {
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  background:#020617;
+
+  padding:14px;
+
+  border-radius:12px;
+}
+
+.scheduler-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  2fr 1fr;
+
+  gap:20px;
+}
+
+.scheduler-panel{
+
+  background:#020617;
+
+  border:1px solid
+  rgba(255,255,255,.05);
+
+  border-radius:18px;
+
+  padding:20px;
+}
+
+.scheduler-title{
+
+  font-size:18px;
+
+  font-weight:600;
+
+  margin-bottom:16px;
+}
+
+.scheduler-stat{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-bottom:14px;
+}
+
+.scheduler-value{
+
+  font-weight:700;
+}
+
+.scheduler-action{
+
+  display:flex;
+
+  gap:12px;
+
+  margin-top:16px;
+}
+
+.scheduler-action button{
+
+  flex:1;
+}
+
+.schedule-chip{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:12px;
+
+  background:#0f172a;
+
+  border-radius:12px;
+
+  margin-bottom:10px;
+}
+
+.badge-active{
+
+  color:#22c55e;
+
+  font-weight:600;
+}
+
+.badge-idle{
+
+  color:#94a3b8;
+}

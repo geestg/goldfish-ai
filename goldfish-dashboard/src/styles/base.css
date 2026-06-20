@@ -1,0 +1,73 @@
+:root {
+
+  --bg:#020617;
+
+  --panel:#0f172a;
+
+  --panel2:#111827;
+
+  --line:
+  rgba(255,255,255,.06);
+
+  --text:#f8fafc;
+
+  --muted:#94a3b8;
+
+  --success:#22c55e;
+
+  --warning:#f59e0b;
+
+  --danger:#ef4444;
+
+  --primary:#3b82f6;
+}
+
+* {
+
+  box-sizing:border-box;
+}
+
+body {
+
+  margin:0;
+
+  background:
+  linear-gradient(
+    180deg,
+    #020617,
+    #07111f
+  );
+
+  color:var(--text);
+
+  font-family:
+  Inter,
+  sans-serif;
+}
+
+.section {
+
+  background:
+  linear-gradient(
+    180deg,
+    #0f172a,
+    #111827
+  );
+
+  border:1px solid var(--line);
+
+  border-radius:22px;
+
+  padding:24px;
+
+  margin-bottom:25px;
+}
+
+.section h3 {
+
+  margin-top:0;
+
+  margin-bottom:20px;
+
+  font-size:18px;
+}
