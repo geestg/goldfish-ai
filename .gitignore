@@ -4,20 +4,38 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Virtual Environment
+# Virtual Env
 venv/
 .venv/
 backend/venv/
-
-# Environment
-.env
 
 # IDE
 .idea/
 .vscode/
 
+# Env
+.env
+
 # Node
 node_modules/
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+
+# AI Models
+*.pt
+*.pth
+
+# Dataset
+dataset/
+
+# Runtime files
+backend/data/uploads/
+backend/data/live/
 
 # Build
 dist/
