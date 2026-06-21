@@ -8,6 +8,18 @@ import {
   downloadReport
 } from "../services/api";
 
+import useRealtime
+  from "../hooks/useRealtime";
+
+import AnalysisDetailModal
+  from "../components/AnalysisDetailModal";
+
+import ExecutionTimeline
+  from "../components/ExecutionTimeline";
+
+import AISystemCard
+  from "../components/AISystemCard";
+
 export default function AnalysisPage() {
 
   const [
@@ -20,14 +32,36 @@ export default function AnalysisPage() {
     setHistory
   ] = useState([]);
 
-  const latestImage =
+  const [
+    selectedAnalysis,
+    setSelectedAnalysis
+  ] = useState(null);
+
+  const originalImage =
     latest?.media_url || null;
+
+  const detectionImage =
+    latest?.detection_image_url || null;
 
   useEffect(() => {
 
     load();
 
   }, []);
+
+  useRealtime({
+
+    onNewData: () => {
+
+      console.log(
+        "[REALTIME] Refresh Analysis"
+      );
+
+      load();
+
+    }
+
+  });
 
   const load = async () => {
 
@@ -39,9 +73,13 @@ export default function AnalysisPage() {
       const rows =
         res.data || [];
 
-      setHistory(rows);
+      setHistory(
+        rows
+      );
 
-      if (rows.length) {
+      if (
+        rows.length
+      ) {
 
         setLatest(
           rows[0]
@@ -50,7 +88,9 @@ export default function AnalysisPage() {
 
     } catch (err) {
 
-      console.error(err);
+      console.error(
+        err
+      );
 
     }
   };
@@ -77,11 +117,15 @@ export default function AnalysisPage() {
 
       </div>
 
-      {/* ================= DETECTION RESULT ================= */}
+      {/* ================= DUAL PREVIEW ================= */}
 
-      <div className="analysis-result-grid">
+      <div
+        className="dual-preview-grid"
+      >
 
-        <div className="preview-card">
+        <div
+          className="preview-card"
+        >
 
           <h3
             style={{
@@ -89,18 +133,20 @@ export default function AnalysisPage() {
               margin: 0
             }}
           >
-            Detection Result
+            Original Capture
           </h3>
 
           {
 
-            latestImage
+            originalImage
 
               ? (
 
                 <img
-                  src={latestImage}
-                  alt="Detection Result"
+                  src={
+                    originalImage
+                  }
+                  alt="original"
                   className="preview-image"
                 />
 
@@ -111,7 +157,50 @@ export default function AnalysisPage() {
                 <div
                   className="preview-placeholder"
                 >
-                  No Detection Image
+                  No Image
+                </div>
+
+              )
+
+          }
+
+        </div>
+
+        <div
+          className="preview-card"
+        >
+
+          <h3
+            style={{
+              padding: "20px",
+              margin: 0
+            }}
+          >
+            YOLO Detection
+          </h3>
+
+          {
+
+            detectionImage
+
+              ? (
+
+                <img
+                  src={
+                    detectionImage
+                  }
+                  alt="detection"
+                  className="preview-image"
+                />
+
+              )
+
+              : (
+
+                <div
+                  className="preview-placeholder"
+                >
+                  No Detection
                 </div>
 
               )
@@ -149,109 +238,166 @@ export default function AnalysisPage() {
 
         </div>
 
-        {/* ================= AI STATS ================= */}
+      </div>
 
-        <div className="ai-stat-grid">
+      {/* ================= AI STATS ================= */}
 
-          <div className="ai-stat">
+      <div
+        className="ai-stat-grid"
+      >
 
-            <div className="ai-label">
-              Fish Count
-            </div>
+        <div
+          className="ai-stat"
+        >
 
-            <div className="ai-value">
-              {latest?.num_fish || 0}
-            </div>
+          <div
+            className="ai-label"
+          >
+            Fish Count
+          </div>
+
+          <div
+            className="ai-value"
+          >
+            {
+              latest?.num_fish || 0
+            }
+          </div>
+
+        </div>
+
+        <div
+          className="ai-stat"
+        >
+
+          <div
+            className="ai-label"
+          >
+            Average Length
+          </div>
+
+          <div
+            className="ai-value"
+          >
+            {
+              latest?.avg_length_cm || 0
+            } cm
+          </div>
+
+        </div>
+
+        <div
+          className="ai-stat"
+        >
+
+          <div
+            className="ai-label"
+          >
+            Feeding Turns
+          </div>
+
+          <div
+            className="ai-value"
+          >
+            {
+              latest?.feeding_turns || 0
+            }
+          </div>
+
+        </div>
+
+        <div
+          className="ai-stat"
+        >
+
+          <div
+            className="ai-label"
+          >
+            Detection Confidence
+          </div>
+
+          <div
+            className="ai-value"
+          >
+            97.2%
+          </div>
+
+        </div>
+
+        <div
+          className="ai-stat"
+        >
+
+          <div
+            className="ai-label"
+          >
+            Capture Type
+          </div>
+
+          <div
+            className="ai-value"
+          >
+            {
+              latest?.file_type || "-"
+            }
+          </div>
+
+        </div>
+
+        <div
+          className="ai-stat"
+        >
+
+          <div
+            className="ai-label"
+          >
+            Analysis Status
+          </div>
+
+          <div
+            className={
+              latest?.status ===
+              "done"
+
+                ? "status-success"
+
+                : "status-error"
+            }
+          >
+
+            {
+              latest?.status || "-"
+            }
 
           </div>
 
-          <div className="ai-stat">
+        </div>
 
-            <div className="ai-label">
-              Average Length
-            </div>
+        <div
+          className="ai-stat"
+        >
 
-            <div className="ai-value">
-              {latest?.avg_length_cm || 0} cm
-            </div>
-
+          <div
+            className="ai-label"
+          >
+            Captured At
           </div>
 
-          <div className="ai-stat">
+          <div
+            className="ai-value-small"
+          >
 
-            <div className="ai-label">
-              Feeding Turns
-            </div>
+            {
 
-            <div className="ai-value">
-              {latest?.feeding_turns || 0}
-            </div>
+              latest?.created_at
 
-          </div>
+                ? new Date(
+                    latest.created_at
+                  ).toLocaleString()
 
-          <div className="ai-stat">
+                : "-"
 
-            <div className="ai-label">
-              Detection Confidence
-            </div>
-
-            <div className="ai-value">
-              97.2%
-            </div>
-
-          </div>
-
-          <div className="ai-stat">
-
-            <div className="ai-label">
-              Capture Type
-            </div>
-
-            <div className="ai-value">
-              {latest?.file_type || "-"}
-            </div>
-
-          </div>
-
-          <div className="ai-stat">
-
-            <div className="ai-label">
-              Analysis Status
-            </div>
-
-            <div
-              className={
-                latest?.status === "done"
-                  ? "status-success"
-                  : "status-error"
-              }
-            >
-              {latest?.status || "-"}
-            </div>
-
-          </div>
-
-          <div className="ai-stat">
-
-            <div className="ai-label">
-              Captured At
-            </div>
-
-            <div className="ai-value-small">
-
-              {
-
-                latest?.created_at
-
-                  ? new Date(
-                      latest.created_at
-                    ).toLocaleString()
-
-                  : "-"
-
-              }
-
-            </div>
+            }
 
           </div>
 
@@ -259,33 +405,47 @@ export default function AnalysisPage() {
 
       </div>
 
-      {/* ================= AI PIPELINE ================= */}
+      {/* ================= PIPELINE ================= */}
 
-      <div className="section">
+      <div
+        className="section"
+      >
 
         <h3>
           AI Pipeline
         </h3>
 
-        <div className="pipeline">
+        <div
+          className="pipeline"
+        >
 
-          <div className="pipeline-step">
+          <div
+            className="pipeline-step"
+          >
             Android Capture
           </div>
 
-          <div className="pipeline-step">
+          <div
+            className="pipeline-step"
+          >
             YOLO Detection
           </div>
 
-          <div className="pipeline-step">
+          <div
+            className="pipeline-step"
+          >
             Length Estimation
           </div>
 
-          <div className="pipeline-step">
+          <div
+            className="pipeline-step"
+          >
             Feed Calculation
           </div>
 
-          <div className="pipeline-step">
+          <div
+            className="pipeline-step"
+          >
             MQTT Publish
           </div>
 
@@ -293,15 +453,19 @@ export default function AnalysisPage() {
 
       </div>
 
-      {/* ================= MQTT COMMAND ================= */}
+      {/* ================= MQTT ================= */}
 
-      <div className="section">
+      <div
+        className="section"
+      >
 
         <h3>
           MQTT Command Generated
         </h3>
 
-        <div className="mqtt-box">
+        <div
+          className="mqtt-box"
+        >
 
 {`{
   "fish_count": ${latest?.num_fish || 0},
@@ -313,15 +477,25 @@ export default function AnalysisPage() {
 
       </div>
 
+      <ExecutionTimeline
+        analysis={latest}
+      />
+
+      <AISystemCard />
+
       {/* ================= HISTORY ================= */}
 
-      <div className="section">
+      <div
+        className="section"
+      >
 
         <h3>
           Recent Analysis
         </h3>
 
-        <div className="table-wrapper">
+        <div
+          className="table-wrapper"
+        >
 
           <table>
 
@@ -346,64 +520,88 @@ export default function AnalysisPage() {
               {
 
                 history
-                  .slice(0, 10)
-                  .map(row => (
+                  .slice(
+                    0,
+                    10
+                  )
+                  .map(
+                    row => (
 
-                    <tr key={row.id}>
+                      <tr
+                        key={
+                          row.id
+                        }
+                        onClick={() =>
+                          setSelectedAnalysis(
+                            row
+                          )
+                        }
+                        style={{
+                          cursor:
+                            "pointer"
+                        }}
+                      >
 
-                      <td>
-                        {row.id}
-                      </td>
+                        <td>
+                          {row.id}
+                        </td>
 
-                      <td>
-                        {row.file_type}
-                      </td>
+                        <td>
+                          {row.file_type}
+                        </td>
 
-                      <td>
-                        {row.num_fish}
-                      </td>
+                        <td>
+                          {row.num_fish}
+                        </td>
 
-                      <td>
-                        {row.avg_length_cm}
-                      </td>
+                        <td>
+                          {row.avg_length_cm}
+                        </td>
 
-                      <td>
-                        {row.feeding_turns}
-                      </td>
+                        <td>
+                          {row.feeding_turns}
+                        </td>
 
-                      <td>
+                        <td>
 
-                        <span
-                          className={
-                            row.status === "done"
-                              ? "status-success"
-                              : "status-error"
-                          }
-                        >
-                          {row.status}
-                        </span>
+                          <span
+                            className={
+                              row.status ===
+                              "done"
 
-                      </td>
+                                ? "status-success"
 
-                      <td>
+                                : "status-error"
+                            }
+                          >
+                            {row.status}
+                          </span>
 
-                        <a
-                          href={
-                            downloadReport(
-                              row.id
-                            )
-                          }
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          PDF
-                        </a>
+                        </td>
 
-                      </td>
+                        <td>
 
-                    </tr>
+                          <a
+                            href={
+                              downloadReport(
+                                row.id
+                              )
+                            }
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) =>
+                              e.stopPropagation()
+                            }
+                          >
+                            PDF
+                          </a>
 
-                  ))
+                        </td>
+
+                      </tr>
+
+                    )
+                  )
 
               }
 
@@ -414,6 +612,28 @@ export default function AnalysisPage() {
         </div>
 
       </div>
+
+      {
+
+        selectedAnalysis && (
+
+          <AnalysisDetailModal
+
+            item={
+              selectedAnalysis
+            }
+
+            onClose={() =>
+              setSelectedAnalysis(
+                null
+              )
+            }
+
+          />
+
+        )
+
+      }
 
     </div>
 

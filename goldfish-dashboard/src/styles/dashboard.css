@@ -111,3 +111,84 @@
 
   color:#3b82f6;
 }
+
+/* ==========================================
+   REALTIME TOAST
+========================================== */
+
+.realtime-toast {
+
+  position: fixed;
+
+  top: 20px;
+  right: 20px;
+
+  width: 320px;
+
+  background: #0f172a;
+
+  border: 1px solid #22c55e;
+
+  border-radius: 12px;
+
+  padding: 16px;
+
+  z-index: 9999;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
+
+  animation:
+    toastSlideIn
+    0.3s ease;
+}
+
+.toast-title {
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+
+  color: #22c55e;
+
+  font-size: 15px;
+}
+
+.toast-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  color: #e2e8f0;
+
+  font-size: 14px;
+}
+
+@keyframes toastSlideIn {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateX(50px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+}

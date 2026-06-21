@@ -5,6 +5,7 @@ from flask import request
 from sqlalchemy import desc
 
 import os
+import json
 
 from models.db import (
     SessionLocal,
@@ -53,6 +54,26 @@ def get_history():
             media_url = None
 
             detection_image_url = None
+
+            detections = []
+
+            # ================= DETECTIONS JSON =================
+
+            if getattr(
+                r,
+                "detections_json",
+                None
+            ):
+
+                try:
+
+                    detections = json.loads(
+                        r.detections_json
+                    )
+
+                except Exception:
+
+                    detections = []
 
             # ================= ORIGINAL FILE =================
 
@@ -127,6 +148,9 @@ def get_history():
                 "detection_image_url":
                     detection_image_url,
 
+                "detections":
+                    detections,
+
                 "num_fish":
                     r.num_fish,
 
@@ -135,6 +159,9 @@ def get_history():
 
                 "feeding_turns":
                     r.feeding_turns,
+
+                "feeding_score":
+                    r.feeding_score,
 
                 "status":
                     r.status,

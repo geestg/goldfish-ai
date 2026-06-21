@@ -6,7 +6,8 @@ from sqlalchemy import (
     Integer,
     Float,
     DateTime,
-    String
+    String,
+    text
 )
 
 from sqlalchemy.orm import (
@@ -79,6 +80,13 @@ class Analysis(Base):
         nullable=True
     )
 
+    # ================= DETECTION METADATA =================
+
+    detections_json = Column(
+        String,
+        nullable=True
+    )
+
     # ================= ANALYSIS =================
 
     num_fish = Column(
@@ -113,6 +121,59 @@ class Analysis(Base):
     )
 
 
+# ================= MIGRATION =================
+
+def migrate_db():
+
+    try:
+
+        with engine.connect() as conn:
+
+            result = conn.execute(
+                text(
+                    "PRAGMA table_info(analysis)"
+                )
+            )
+
+            columns = [
+                row[1]
+                for row in result.fetchall()
+            ]
+
+            if "detections_json" not in columns:
+
+                print(
+                    "[DB MIGRATION] add detections_json"
+                )
+
+                conn.execute(
+                    text(
+                        """
+                        ALTER TABLE analysis
+                        ADD COLUMN detections_json TEXT
+                        """
+                    )
+                )
+
+                conn.commit()
+
+                print(
+                    "[DB MIGRATION] done"
+                )
+
+            else:
+
+                print(
+                    "[DB MIGRATION] detections_json already exists"
+                )
+
+    except Exception as e:
+
+        print(
+            f"[DB MIGRATION ERROR] {e}"
+        )
+
+
 # ================= INIT DB =================
 
 def init_db():
@@ -120,3 +181,5 @@ def init_db():
     Base.metadata.create_all(
         bind=engine
     )
+
+    migrate_db()

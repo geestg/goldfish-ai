@@ -1,4 +1,4 @@
-export default function HistoryPreviewModal({
+export default function AnalysisDetailModal({
   item,
   onClose
 }) {
@@ -28,7 +28,7 @@ export default function HistoryPreviewModal({
         <div className="modal-header">
 
           <h2>
-            Analysis Preview
+            Analysis Detail
           </h2>
 
           <button
@@ -76,7 +76,7 @@ export default function HistoryPreviewModal({
 
         </div>
 
-        {/* IMAGE SECTION */}
+        {/* IMAGE PREVIEW */}
 
         <div className="dual-preview-grid">
 
@@ -166,9 +166,18 @@ export default function HistoryPreviewModal({
                   <tr>
 
                     <th>#</th>
-                    <th>Length</th>
-                    <th>Confidence</th>
-                    <th>Bounding Box</th>
+
+                    <th>
+                      Length (cm)
+                    </th>
+
+                    <th>
+                      Confidence
+                    </th>
+
+                    <th>
+                      Bounding Box
+                    </th>
 
                   </tr>
 
@@ -192,7 +201,6 @@ export default function HistoryPreviewModal({
 
                           <td>
                             {fish.length_cm}
-                            {" "}cm
                           </td>
 
                           <td>
@@ -214,10 +222,17 @@ export default function HistoryPreviewModal({
 
                             {
 
-                              fish.x1 !==
-                              undefined
+                              fish.x1 !== undefined
 
-                              ? `(${fish.x1},${fish.y1}) → (${fish.x2},${fish.y2})`
+                              ? (
+
+                                <>
+                                  ({fish.x1},{fish.y1})
+                                  {" → "}
+                                  ({fish.x2},{fish.y2})
+                                </>
+
+                              )
 
                               : "-"
 
@@ -241,6 +256,45 @@ export default function HistoryPreviewModal({
           )
 
         }
+
+        {/* AI SYSTEM */}
+
+        <div className="section">
+
+          <h3>
+            AI System Information
+          </h3>
+
+          <div className="detail-grid">
+
+            <div className="detail-item">
+              <span>Model</span>
+              <b>best.pt</b>
+            </div>
+
+            <div className="detail-item">
+              <span>Engine</span>
+              <b>YOLOv8 Pose</b>
+            </div>
+
+            <div className="detail-item">
+              <span>Backend</span>
+              <b>Flask</b>
+            </div>
+
+            <div className="detail-item">
+              <span>MQTT</span>
+              <b>Mosquitto</b>
+            </div>
+
+            <div className="detail-item">
+              <span>Device</span>
+              <b>ESP32</b>
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 

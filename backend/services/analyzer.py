@@ -53,6 +53,7 @@ def _process_frame(frame):
     detections = []
 
     boxes = None
+    confidences = None
 
     if res.boxes is not None:
 
@@ -64,9 +65,16 @@ def _process_frame(frame):
                 .numpy()
             )
 
+            confidences = (
+                res.boxes.conf
+                .cpu()
+                .numpy()
+            )
+
         except Exception:
 
             boxes = None
+            confidences = None
 
     if res.keypoints is not None:
 
@@ -106,7 +114,10 @@ def _process_frame(frame):
                         round(
                             float(length_cm),
                             2
-                        )
+                        ),
+
+                    "confidence":
+                        0.0
                 }
 
                 if (
@@ -130,6 +141,20 @@ def _process_frame(frame):
                         "y2":
                             int(y2)
                     })
+
+                    if (
+                        confidences is not None
+                        and i < len(confidences)
+                    ):
+
+                        detection[
+                            "confidence"
+                        ] = round(
+                            float(
+                                confidences[i]
+                            ) * 100,
+                            2
+                        )
 
                 else:
 

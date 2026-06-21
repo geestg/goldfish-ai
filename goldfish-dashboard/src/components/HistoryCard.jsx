@@ -1,17 +1,15 @@
-import { API_URL } from "../services/api";
-
 export default function HistoryCard({
   item,
   onPreview
 }) {
 
-  const imageUrl =
+  const thumbnailUrl =
 
-    item.file_path
+    item.detection_image_url ||
 
-    ? `${API_URL}/media/${item.file_path}`
+    item.media_url ||
 
-    : null;
+    null;
 
   return (
 
@@ -19,13 +17,14 @@ export default function HistoryCard({
 
       {
 
-        imageUrl
+        thumbnailUrl
 
         ? (
 
           <img
-            src={imageUrl}
+            src={thumbnailUrl}
             className="history-thumb"
+            alt={`Analysis ${item.id}`}
           />
 
         )
@@ -34,7 +33,10 @@ export default function HistoryCard({
 
           <div
             className="history-thumb"
-          />
+          >
+            No Image
+          </div>
+
         )
 
       }
@@ -52,23 +54,19 @@ export default function HistoryCard({
         <div
           className="history-meta"
         >
-          Fish :
-          {item.num_fish}
+          Fish : {item.num_fish}
         </div>
 
         <div
           className="history-meta"
         >
-          Length :
-          {item.avg_length_cm}
-          cm
+          Length : {item.avg_length_cm} cm
         </div>
 
         <div
           className="history-meta"
         >
-          Feed :
-          {item.feeding_turns}
+          Feed : {item.feeding_turns}
         </div>
 
         <div
@@ -100,4 +98,5 @@ export default function HistoryCard({
     </div>
 
   );
+
 }

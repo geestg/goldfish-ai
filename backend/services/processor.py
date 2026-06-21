@@ -1,3 +1,5 @@
+import json
+
 from services.analyzer import analyze_image, analyze_video
 from services.feeder import calculate_feeding
 from services.mqtt_service import publish_feed
@@ -122,6 +124,11 @@ def process(task):
 
             detection_image=
                 detection_image,
+
+            detections_json=
+                json.dumps(
+                    detections
+                ),
 
             num_fish=num_fish,
 
