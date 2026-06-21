@@ -35,7 +35,6 @@ from services.worker import start_worker
 from services.socket_instance import socketio
 from services.mqtt_service import init_mqtt
 
-
 DATASET_BASE = "D:/goldfish-ai/dataset"
 
 
@@ -187,7 +186,10 @@ def create_app():
 
     print("[DEBUG] ROUTES REGISTERED")
 
-    # ================= MEDIA =================
+    # =====================================================
+    # DATASET MEDIA
+    # =====================================================
+
     @app.route("/media/<path:filename>")
     def media(filename):
 
@@ -198,11 +200,18 @@ def create_app():
                 filename
             )
 
-            if not os.path.exists(full_path):
+            if not os.path.exists(
+                full_path
+            ):
                 abort(404)
 
-            directory = os.path.dirname(full_path)
-            file_name = os.path.basename(full_path)
+            directory = os.path.dirname(
+                full_path
+            )
+
+            file_name = os.path.basename(
+                full_path
+            )
 
             return send_from_directory(
                 directory,
@@ -217,7 +226,42 @@ def create_app():
 
             abort(404)
 
+    # =====================================================
+    # YOLO DETECTION IMAGE
+    # =====================================================
+
+    @app.route(
+        "/detection/<path:filename>"
+    )
+    def detection_image(filename):
+
+        try:
+
+            full_path = os.path.join(
+                OUTPUT_IMAGE_DIR,
+                filename
+            )
+
+            if not os.path.exists(
+                full_path
+            ):
+                abort(404)
+
+            return send_from_directory(
+                OUTPUT_IMAGE_DIR,
+                filename
+            )
+
+        except Exception as e:
+
+            logger.error(
+                f"[DETECTION IMAGE ERROR] {e}"
+            )
+
+            abort(404)
+
     # ================= HEALTH =================
+
     @app.route("/health")
     def health():
 
@@ -226,6 +270,7 @@ def create_app():
         }
 
     # ================= ROOT =================
+
     @app.route("/")
     def root():
 
@@ -236,6 +281,7 @@ def create_app():
         }
 
     # ================= DEBUG ROUTES =================
+
     @app.route("/routes")
     def routes():
 
@@ -257,6 +303,7 @@ def create_app():
 
 
 # ================= RUN =================
+
 app = create_app()
 
 if __name__ == "__main__":

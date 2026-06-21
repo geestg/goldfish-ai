@@ -12897,3 +12897,380 @@ AssertionError: write() before start_response
 2026-06-20 16:56:32,631 | INFO | 192.168.137.1 - - [20/Jun/2026 16:56:32] "[36mGET /media/2026-06-18/images/010422.jpg HTTP/1.1[0m" 304 -
 2026-06-20 17:14:22,821 | INFO | 127.0.0.1 - - [20/Jun/2026 17:14:22] "GET /routes HTTP/1.1" 200 -
 2026-06-20 17:14:22,901 | INFO | 127.0.0.1 - - [20/Jun/2026 17:14:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-20 17:25:23,905 | INFO | [CORS] Enabled
+2026-06-20 17:25:23,906 | INFO | [INIT] Folder ready
+2026-06-20 17:25:23,908 | INFO | [DB] Initialized
+2026-06-20 17:25:23,942 | INFO | [SOCKET] Initialized
+2026-06-20 17:25:23,959 | INFO | [MQTT] Started
+2026-06-20 17:25:23,961 | INFO | [MQTT] Initialized
+2026-06-20 17:25:23,961 | INFO | [WORKER] running...
+2026-06-20 17:25:23,961 | INFO | [WORKER] Started
+2026-06-20 17:25:23,961 | INFO | [MQTT] Connected
+2026-06-20 17:25:23,968 | INFO | [MQTT] Subscribed -> goldfish/feeder/status
+2026-06-20 17:25:23,968 | INFO | [START] Server running on http://0.0.0.0:8000
+2026-06-20 17:25:23,984 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.231:8000
+2026-06-20 17:25:23,984 | INFO | [33mPress CTRL+C to quit[0m
+2026-06-20 17:38:54,194 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"online","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:38:55,993 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:01,016 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:06,028 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:11,039 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:19,232 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"online","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:21,019 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:26,023 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:31,022 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:32,342 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:32] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:39:32,342 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:32] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:39:33,571 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:33] "GET /api/android/status HTTP/1.1" 200 -
+2026-06-20 17:39:33,573 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:33] "GET /api/camera/latest?t=1781951973562 HTTP/1.1" 200 -
+2026-06-20 17:39:33,575 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:33] "GET /api/android/status HTTP/1.1" 200 -
+2026-06-20 17:39:34,567 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:34] "GET /api/camera/latest?t=1781951974563 HTTP/1.1" 200 -
+2026-06-20 17:39:34,833 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:34] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:35,566 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:35] "GET /api/camera/latest?t=1781951975562 HTTP/1.1" 200 -
+2026-06-20 17:39:35,985 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:35] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:36,031 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:36,569 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:36] "GET /api/android/status HTTP/1.1" 200 -
+2026-06-20 17:39:36,571 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:36] "GET /api/camera/latest?t=1781951976566 HTTP/1.1" 200 -
+2026-06-20 17:39:37,299 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:37] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:39:37,309 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:37] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:39:37,577 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:37] "GET /api/camera/latest?t=1781951977571 HTTP/1.1" 200 -
+2026-06-20 17:39:37,687 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:37] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:38,570 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:38] "GET /api/camera/latest?t=1781951978565 HTTP/1.1" 200 -
+2026-06-20 17:39:39,569 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:39] "GET /api/android/status HTTP/1.1" 200 -
+2026-06-20 17:39:39,571 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:39] "GET /api/camera/latest?t=1781951979565 HTTP/1.1" 200 -
+2026-06-20 17:39:40,168 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:40] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:40,318 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:40] "GET /api/dataset HTTP/1.1" 200 -
+2026-06-20 17:39:40,324 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:40] "GET /api/dataset HTTP/1.1" 200 -
+2026-06-20 17:39:40,329 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:40] "GET /api/dataset/2026-06-19 HTTP/1.1" 200 -
+2026-06-20 17:39:40,336 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:40] "GET /api/dataset/2026-06-19 HTTP/1.1" 200 -
+2026-06-20 17:39:40,390 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:40] "[36mGET /media/2026-06-19/images/135007.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:39:41,039 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:41,768 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:41] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:43,925 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:43] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:43,949 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:43] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:39:43,956 | INFO | 192.168.137.1 - - [20/Jun/2026 17:39:43] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:39:45,857 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:45] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:46,039 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:47,215 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:47] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:39:47,216 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:47] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:39:47,839 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:47] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:50,011 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:50] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:51,081 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:51,238 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:51] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:54,357 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:54] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:55,507 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:55] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:56,033 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:39:57,259 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:57] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:39:57,263 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:57] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:39:57,640 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:57] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:39:59,823 | INFO | 192.168.137.58 - - [20/Jun/2026 17:39:59] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:00,946 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:00] "OPTIONS /api/schedule HTTP/1.1" 200 -
+2026-06-20 17:40:00,949 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:00] "POST /api/schedule HTTP/1.1" 200 -
+2026-06-20 17:40:01,048 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:40:01,965 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:01] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:03,876 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:03] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:05,823 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:05] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:06,037 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:40:07,457 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:07] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:40:07,458 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:07] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:40:07,673 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:07] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:09,602 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:09] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:40:09,610 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:09] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:40:09,621 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:09] "[36mGET /media/2026-06-19/images/135007.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:40:09,656 | INFO | [QUEUE] add task \u2192 {'path': 'D:/goldfish-ai/dataset\\2026-06-20\\images\\174009.jpg', 'type': 'image'}
+2026-06-20 17:40:09,657 | INFO | [PROCESS] image \u2192 D:/goldfish-ai/dataset\2026-06-20\images\174009.jpg
+2026-06-20 17:40:09,658 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:09] "POST /api/upload HTTP/1.1" 200 -
+2026-06-20 17:40:10,079 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:10] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:10,332 | INFO | [AI] fish=0, avg=0.0
+2026-06-20 17:40:10,334 | INFO | [FEED] turns=0.0, score=0
+2026-06-20 17:40:10,786 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:10] "GET /api/dataset HTTP/1.1" 200 -
+2026-06-20 17:40:10,791 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:10] "GET /api/dataset HTTP/1.1" 200 -
+2026-06-20 17:40:10,794 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:10] "GET /api/dataset/2026-06-20 HTTP/1.1" 200 -
+2026-06-20 17:40:10,802 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:10] "GET /api/dataset/2026-06-20 HTTP/1.1" 200 -
+2026-06-20 17:40:10,813 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:10] "GET /media/2026-06-20/images/174009.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:11,046 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:40:11,561 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:11] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:13,596 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:13] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:15,595 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:15] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:16,043 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:40:17,230 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:17] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:40:17,231 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:17] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:40:17,649 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:17] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:18,266 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:18] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:40:18,274 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:18] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:40:19,653 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:19] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:21,063 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:40:21,844 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:21] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:23,731 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:23] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:26,008 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:26] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:26,179 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:40:27,357 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:27] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:40:27,358 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:27] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:40:27,395 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:27] "GET /api/dataset HTTP/1.1" 200 -
+2026-06-20 17:40:27,400 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:27] "GET /api/dataset HTTP/1.1" 200 -
+2026-06-20 17:40:27,405 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:27] "GET /api/dataset/2026-06-20 HTTP/1.1" 200 -
+2026-06-20 17:40:27,410 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:27] "GET /api/dataset/2026-06-20 HTTP/1.1" 200 -
+2026-06-20 17:40:27,845 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:27] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:29,315 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:29] "GET /api/dataset/2026-06-20 HTTP/1.1" 200 -
+2026-06-20 17:40:29,695 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:29] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:30,202 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:30] "GET /api/dataset/2026-06-20 HTTP/1.1" 200 -
+2026-06-20 17:40:31,052 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:40:31,485 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:31] "GET /api/dataset/export/2026-06-20 HTTP/1.1" 200 -
+2026-06-20 17:40:31,728 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:31] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:33,975 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:33] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:35,617 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:35] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:36,051 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:40:37,369 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:37] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:40:37,370 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:37] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:40:37,899 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:37] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:39,975 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:39] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:41,070 | INFO | [MQTT] RX: {"device":"esp32_feeder","status":"alive","feeding":false,"turn":0,"total":1,"ip":"192.168.137.76"}
+2026-06-20 17:40:41,873 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:41] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:42,826 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:42] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:43,366 | INFO | [MQTT] RX: offline
+2026-06-20 17:40:43,366 | ERROR | [MQTT] Parse error: Expecting value: line 1 column 1 (char 0)
+2026-06-20 17:40:44,991 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:44] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:46,915 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:46] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:47,220 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:47] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:40:47,222 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:47] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:40:47,555 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:47] "GET /api/dataset/export/2026-06-19 HTTP/1.1" 200 -
+2026-06-20 17:40:48,841 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:48] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:50,996 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:50] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:52,867 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:52] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:53,176 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:53] "GET /api/device/status HTTP/1.1" 200 -
+2026-06-20 17:40:53,178 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:53] "GET /api/device/status HTTP/1.1" 200 -
+2026-06-20 17:40:54,477 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:40:54,484 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:40:54,503 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-20/images/174009.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,507 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-19/images/135007.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,538 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010412.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,538 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010422.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,538 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010402.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,539 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010352.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,559 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010332.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,564 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010342.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,565 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010322.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,574 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010312.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,587 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010302.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,603 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010252.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,608 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010242.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,612 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010232.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,620 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010222.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,623 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010213.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,628 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010203.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,638 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010152.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,644 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010143.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,649 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010132.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,656 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010122.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,658 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010113.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,666 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010103.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,676 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010052.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,681 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010042.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,683 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010032.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,715 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010022.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,720 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010012.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,738 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/010002.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,766 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005952.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,771 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005943.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,775 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005933.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,796 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005923.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,802 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005913.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,813 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005903.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,815 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005853.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,861 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005843.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,864 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005833.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:54,879 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:54] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:54,992 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:54] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005823.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,001 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005813.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,005 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005803.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,009 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005753.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,030 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005743.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,039 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005733.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,291 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005723.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,296 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005713.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,301 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005703.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,306 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005653.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,314 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005643.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,326 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005633.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,370 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005623.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,372 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005613.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,376 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005603.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,379 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005553.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,381 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005543.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,401 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005533.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,457 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005523.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,461 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005513.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,465 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005503.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,466 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005453.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,466 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005443.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,490 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005434.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,544 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005423.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,546 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005413.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,548 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005403.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,550 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005353.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,551 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005343.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,577 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005333.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,633 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005323.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,634 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005313.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,636 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005303.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,639 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005253.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,640 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005243.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,668 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005233.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,714 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005222.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,715 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005213.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,718 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005203.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:55,720 | ERROR | [MEDIA ERROR] 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-06-20 17:40:55,720 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "[33mGET /media/D:/goldfish-ai/dataset/2026-06-15/images/002121.jpg HTTP/1.1[0m" 404 -
+2026-06-20 17:40:55,722 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:55] "GET /media/D:/goldfish-ai/dataset/2026-06-18/images/005154.jpg HTTP/1.1" 200 -
+2026-06-20 17:40:56,945 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:56] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:40:57,228 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:57] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:40:57,228 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:57] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:40:57,430 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:57] "GET /api/device/status HTTP/1.1" 200 -
+2026-06-20 17:40:57,434 | INFO | 192.168.137.1 - - [20/Jun/2026 17:40:57] "GET /api/device/status HTTP/1.1" 200 -
+2026-06-20 17:40:58,902 | INFO | 192.168.137.58 - - [20/Jun/2026 17:40:58] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:00,918 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:00] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:01,495 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:41:01,507 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:41:01,529 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-20/images/174009.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,534 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-19/images/135007.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,564 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010422.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,564 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010412.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,565 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010402.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,565 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010352.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,576 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010322.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,576 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010332.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,577 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010342.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,583 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010312.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,595 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010302.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,604 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010242.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,608 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010252.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,611 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010232.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,615 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010222.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,618 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010213.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,619 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010203.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,638 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010152.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,641 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010143.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,646 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010132.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,650 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010122.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,655 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010113.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,661 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010103.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,666 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010052.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,669 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010042.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,673 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010032.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,680 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010022.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,684 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010012.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,688 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/010002.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,690 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005952.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,695 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005943.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,704 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005933.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,705 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005923.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,837 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005913.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,858 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005903.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,863 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005853.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,868 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005843.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,879 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005833.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,879 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005823.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,884 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005813.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,920 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005803.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,934 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005753.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,942 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005743.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,942 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005733.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,951 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005723.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,953 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005713.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:01,977 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:01] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005703.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,003 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005653.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,007 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005643.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,015 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005633.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,018 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005623.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,022 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005613.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,027 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005603.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,051 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005553.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,056 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005543.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,060 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005533.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,063 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005523.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,069 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005513.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,072 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005503.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,084 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005453.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,101 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005443.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,103 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005434.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,110 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005423.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,112 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005413.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,118 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005403.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,123 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005353.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,146 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005343.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,150 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005333.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,157 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005323.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,163 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005313.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,165 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005303.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,167 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005253.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,172 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005243.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,181 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005233.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,187 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005222.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,190 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005213.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,197 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005203.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,198 | ERROR | [MEDIA ERROR] 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-06-20 17:41:02,199 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[33mGET /media/D:/goldfish-ai/dataset/2026-06-15/images/002121.jpg HTTP/1.1[0m" 404 -
+2026-06-20 17:41:02,199 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:02] "[36mGET /media/D:/goldfish-ai/dataset/2026-06-18/images/005154.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:02,973 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:02] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:03,155 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:03] "GET / HTTP/1.1" 200 -
+2026-06-20 17:41:03,158 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:03] "GET / HTTP/1.1" 200 -
+2026-06-20 17:41:03,163 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:03] "GET /health HTTP/1.1" 200 -
+2026-06-20 17:41:03,169 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:03] "GET /health HTTP/1.1" 200 -
+2026-06-20 17:41:03,185 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:03] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:41:03,195 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:03] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:41:04,541 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:04] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:41:04,548 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:04] "GET /api/history HTTP/1.1" 200 -
+2026-06-20 17:41:04,560 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:04] "[36mGET /media/2026-06-20/images/174009.jpg HTTP/1.1[0m" 304 -
+2026-06-20 17:41:05,070 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:05] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:06,828 | INFO | 192.168.137.1 - - [20/Jun/2026 17:41:06] "GET /api/report/79 HTTP/1.1" 200 -
+2026-06-20 17:41:06,913 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:06] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:07,255 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:07] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:41:07,256 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:07] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:41:08,927 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:08] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:11,106 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:11] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:12,901 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:12] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:14,972 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:14] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:17,139 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:17] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:17,240 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:17] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:41:17,240 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:17] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:41:18,883 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:18] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:20,907 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:20] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:23,036 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:23] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:25,013 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:25] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:26,961 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:26] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:27,225 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:27] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:41:27,227 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:27] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:41:28,932 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:28] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:30,926 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:30] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:33,204 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:33] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:34,947 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:34] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:36,921 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:36] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:37,279 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:37] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:41:37,284 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:37] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:41:39,254 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:39] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:40,965 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:40] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:42,943 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:42] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:45,079 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:45] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:47,053 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:47] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:47,230 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:47] "POST /api/android/heartbeat HTTP/1.1" 200 -
+2026-06-20 17:41:47,235 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:47] "GET /api/device/command HTTP/1.1" 200 -
+2026-06-20 17:41:48,972 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:48] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:41:51,010 | INFO | 192.168.137.58 - - [20/Jun/2026 17:41:51] "POST /api/camera/frame HTTP/1.1" 200 -
+2026-06-20 17:42:13,317 | INFO | [MQTT] RX: offline
+2026-06-20 17:42:13,317 | ERROR | [MQTT] Parse error: Expecting value: line 1 column 1 (char 0)
+2026-06-21 20:20:36,994 | INFO | [CORS] Enabled
+2026-06-21 20:20:36,995 | INFO | [INIT] Folder ready
+2026-06-21 20:20:37,003 | INFO | [DB] Initialized
+2026-06-21 20:20:37,050 | INFO | [SOCKET] Initialized
+2026-06-21 20:20:41,151 | INFO | [MQTT] Initialized
+2026-06-21 20:20:41,152 | INFO | [WORKER] running...
+2026-06-21 20:20:41,152 | INFO | [WORKER] Started
+2026-06-21 20:20:41,159 | INFO | [START] Server running on http://0.0.0.0:8000
+2026-06-21 20:20:41,175 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.231:8000
+2026-06-21 20:20:41,175 | INFO | [33mPress CTRL+C to quit[0m

@@ -17,7 +17,9 @@ def process(task):
     path = task["path"]
     file_type = task["type"]
 
-    logger.info(f"[PROCESS] {file_type} → {path}")
+    logger.info(
+        f"[PROCESS] {file_type} → {path}"
+    )
 
     print(f"[DEBUG] PATH={path}")
     print(f"[DEBUG] TYPE={file_type}")
@@ -28,20 +30,27 @@ def process(task):
 
         print("[DEBUG] ANALYSIS START")
 
-        # ================= ANALYSIS =================
         if file_type == "image":
+
             result = analyze_image(path)
 
         elif file_type == "video":
+
             result = analyze_video(path)
 
         else:
-            raise Exception("Unknown file type")
+
+            raise Exception(
+                "Unknown file type"
+            )
 
         print("[DEBUG] ANALYSIS DONE")
         print(f"[DEBUG] RESULT={result}")
 
-        num_fish = result.get("num_fish", 0)
+        num_fish = result.get(
+            "num_fish",
+            0
+        )
 
         avg_length = result.get(
             "avg_length_cm",
@@ -51,6 +60,10 @@ def process(task):
         detections = result.get(
             "detections",
             []
+        )
+
+        detection_image = result.get(
+            "detection_image"
         )
 
         logger.info(
@@ -65,7 +78,12 @@ def process(task):
             f"[DEBUG] DETECTIONS={len(detections)}"
         )
 
+        print(
+            f"[DEBUG] DETECTION_IMAGE={detection_image}"
+        )
+
         # ================= FEEDING =================
+
         feeding_turns = calculate_feeding(
             num_fish,
             avg_length
@@ -75,7 +93,6 @@ def process(task):
             f"[DEBUG] FEEDING_TURNS={feeding_turns}"
         )
 
-        # ================= SCORE =================
         feeding_score = 0
 
         if num_fish > 0:
@@ -94,15 +111,29 @@ def process(task):
         )
 
         # ================= SAVE DB =================
+
         print("[DEBUG] CREATE RECORD")
 
         record = Analysis(
+
             file_type=file_type,
+
             file_path=path,
+
+            detection_image=
+                detection_image,
+
             num_fish=num_fish,
-            avg_length_cm=avg_length,
-            feeding_turns=feeding_turns,
-            feeding_score=feeding_score,
+
+            avg_length_cm=
+                avg_length,
+
+            feeding_turns=
+                feeding_turns,
+
+            feeding_score=
+                feeding_score,
+
             status="done"
         )
 
@@ -123,7 +154,11 @@ def process(task):
         )
 
         # ================= MQTT =================
-        if ENABLE_MQTT and feeding_turns > 0:
+
+        if (
+            ENABLE_MQTT
+            and feeding_turns > 0
+        ):
 
             print(
                 f"[DEBUG] MQTT FEED turns={feeding_turns}"
@@ -134,23 +169,39 @@ def process(task):
             )
 
         # ================= SOCKET =================
+
         print("[DEBUG] SOCKET EMIT")
 
         socketio.emit(
             "new_data",
             {
-                "id": record.id,
-                "type": file_type,
 
-                "num_fish": num_fish,
-                "avg_length_cm": avg_length,
+                "id":
+                    record.id,
 
-                "feeding_turns": feeding_turns,
-                "feeding_score": feeding_score,
+                "type":
+                    file_type,
 
-                "detections": detections,
+                "num_fish":
+                    num_fish,
 
-                "status": "success"
+                "avg_length_cm":
+                    avg_length,
+
+                "feeding_turns":
+                    feeding_turns,
+
+                "feeding_score":
+                    feeding_score,
+
+                "detections":
+                    detections,
+
+                "detection_image":
+                    detection_image,
+
+                "status":
+                    "success"
             }
         )
 

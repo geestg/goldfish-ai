@@ -5,7 +5,7 @@ import {
 
 import {
   getHistory,
-  API_URL
+  downloadReport
 } from "../services/api";
 
 export default function AnalysisPage() {
@@ -50,9 +50,7 @@ export default function AnalysisPage() {
 
     } catch (err) {
 
-      console.error(
-        err
-      );
+      console.error(err);
 
     }
   };
@@ -120,7 +118,38 @@ export default function AnalysisPage() {
 
           }
 
+          {
+
+            latest && (
+
+              <div
+                style={{
+                  padding: "16px"
+                }}
+              >
+
+                <a
+                  href={
+                    downloadReport(
+                      latest.id
+                    )
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary"
+                >
+                  Download Report PDF
+                </a>
+
+              </div>
+
+            )
+
+          }
+
         </div>
+
+        {/* ================= AI STATS ================= */}
 
         <div className="ai-stat-grid">
 
@@ -143,9 +172,7 @@ export default function AnalysisPage() {
             </div>
 
             <div className="ai-value">
-              {latest?.avg_length_cm || 0}
-              {" "}
-              cm
+              {latest?.avg_length_cm || 0} cm
             </div>
 
           </div>
@@ -192,8 +219,38 @@ export default function AnalysisPage() {
               Analysis Status
             </div>
 
-            <div className="ai-value">
-              {latest?.status || "done"}
+            <div
+              className={
+                latest?.status === "done"
+                  ? "status-success"
+                  : "status-error"
+              }
+            >
+              {latest?.status || "-"}
+            </div>
+
+          </div>
+
+          <div className="ai-stat">
+
+            <div className="ai-label">
+              Captured At
+            </div>
+
+            <div className="ai-value-small">
+
+              {
+
+                latest?.created_at
+
+                  ? new Date(
+                      latest.created_at
+                    ).toLocaleString()
+
+                  : "-"
+
+              }
+
             </div>
 
           </div>
@@ -315,14 +372,26 @@ export default function AnalysisPage() {
                       </td>
 
                       <td>
-                        {row.status}
+
+                        <span
+                          className={
+                            row.status === "done"
+                              ? "status-success"
+                              : "status-error"
+                          }
+                        >
+                          {row.status}
+                        </span>
+
                       </td>
 
                       <td>
 
                         <a
                           href={
-                            `${API_URL}/api/report/${row.id}`
+                            downloadReport(
+                              row.id
+                            )
                           }
                           target="_blank"
                           rel="noreferrer"

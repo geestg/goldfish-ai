@@ -61,33 +61,52 @@ class Analysis(Base):
         index=True
     )
 
-    # dataset
+    # ================= DATASET =================
+
     file_type = Column(
         String,
         default="image"
     )
 
-    file_path = Column(String)
+    file_path = Column(
+        String
+    )
 
-    # analysis
-    num_fish = Column(Integer)
+    # ================= DETECTION IMAGE =================
 
-    avg_length_cm = Column(Float)
+    detection_image = Column(
+        String,
+        nullable=True
+    )
 
-    feeding_turns = Column(Integer)
+    # ================= ANALYSIS =================
+
+    num_fish = Column(
+        Integer
+    )
+
+    avg_length_cm = Column(
+        Float
+    )
+
+    feeding_turns = Column(
+        Integer
+    )
 
     feeding_score = Column(
         Float,
         default=0
     )
 
-    # process
+    # ================= PROCESS =================
+
     status = Column(
         String,
         default="done"
     )
 
-    # timestamp
+    # ================= TIMESTAMP =================
+
     created_at = Column(
         DateTime,
         default=datetime.utcnow

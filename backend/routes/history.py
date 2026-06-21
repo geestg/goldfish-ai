@@ -1,15 +1,32 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint
+from flask import jsonify
+from flask import request
+
 from sqlalchemy import desc
+
 import os
 
-from models.db import SessionLocal, Analysis
+from models.db import (
+    SessionLocal,
+    Analysis
+)
 
-history_bp = Blueprint("history", __name__)
+history_bp = Blueprint(
+    "history",
+    __name__
+)
 
 DATASET_BASE = "D:/goldfish-ai/dataset"
 
+ANALYSIS_IMAGE_DIR = (
+    "D:/goldfish-ai/backend/data/analisa_gambar"
+)
 
-@history_bp.route("/history", methods=["GET"])
+
+@history_bp.route(
+    "/history",
+    methods=["GET"]
+)
 def get_history():
 
     db = SessionLocal()
@@ -18,7 +35,11 @@ def get_history():
 
         records = (
             db.query(Analysis)
-            .order_by(desc(Analysis.created_at))
+            .order_by(
+                desc(
+                    Analysis.created_at
+                )
+            )
             .limit(100)
             .all()
         )
@@ -30,6 +51,10 @@ def get_history():
         for r in records:
 
             media_url = None
+
+            detection_image_url = None
+
+            # ================= ORIGINAL FILE =================
 
             if r.file_path:
 
@@ -45,7 +70,9 @@ def get_history():
                         .replace("\\", "/")
                     )
 
-                    if normalized.startswith(dataset_root):
+                    if normalized.startswith(
+                        dataset_root
+                    ):
 
                         relative_path = normalized.replace(
                             dataset_root + "/",
@@ -57,40 +84,83 @@ def get_history():
                         )
 
                 except Exception:
+
                     media_url = None
+
+            # ================= DETECTION IMAGE =================
+
+            if r.detection_image:
+
+                try:
+
+                    detection_name = (
+                        os.path.basename(
+                            r.detection_image
+                        )
+                    )
+
+                    detection_image_url = (
+                        f"{host}/detection/{detection_name}"
+                    )
+
+                except Exception:
+
+                    detection_image_url = None
 
             result.append({
 
-                "id": r.id,
+                "id":
+                    r.id,
 
-                # dataset
-                "file_type": r.file_type,
-                "file_path": r.file_path,
-                "media_url": media_url,
+                "file_type":
+                    r.file_type,
 
-                # analysis
-                "num_fish": r.num_fish,
-                "avg_length_cm": r.avg_length_cm,
-                "feeding_turns": r.feeding_turns,
+                "file_path":
+                    r.file_path,
 
-                # process
-                "status": r.status,
+                "media_url":
+                    media_url,
 
-                # timestamp
-                "created_at": (
-                    r.created_at.isoformat()
-                    if r.created_at
-                    else None
-                )
+                "detection_image":
+                    r.detection_image,
+
+                "detection_image_url":
+                    detection_image_url,
+
+                "num_fish":
+                    r.num_fish,
+
+                "avg_length_cm":
+                    r.avg_length_cm,
+
+                "feeding_turns":
+                    r.feeding_turns,
+
+                "status":
+                    r.status,
+
+                "created_at":
+                    (
+                        r.created_at.isoformat()
+                        if r.created_at
+                        else None
+                    )
             })
 
-        return jsonify(result)
+        return jsonify(
+            result
+        )
 
     except Exception as e:
 
         return jsonify({
-            "status": "error",
-            "message": str(e)
+
+            "status":
+                "error",
+
+            "message":
+                str(e)
+
         }), 500
 
     finally:

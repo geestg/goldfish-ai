@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import os
+import uuid
 
 from ultralytics import YOLO
 
@@ -9,6 +10,36 @@ from config.settings import *
 # ================= LOAD MODEL =================
 
 model = YOLO(MODEL_PATH)
+
+# ================= SAVE DETECTION =================
+
+def save_detection_image(
+    frame,
+    result
+):
+
+    os.makedirs(
+        OUTPUT_IMAGE_DIR,
+        exist_ok=True
+    )
+
+    plotted = result.plot()
+
+    filename = (
+        f"{uuid.uuid4().hex}.jpg"
+    )
+
+    output_path = os.path.join(
+        OUTPUT_IMAGE_DIR,
+        filename
+    )
+
+    cv2.imwrite(
+        output_path,
+        plotted
+    )
+
+    return output_path
 
 
 # ================= CORE =================
@@ -50,6 +81,7 @@ def _process_frame(frame):
             try:
 
                 head = kpts[i][0]
+
                 tail = kpts[i][1]
 
                 length_px = np.linalg.norm(
@@ -57,6 +89,7 @@ def _process_frame(frame):
                 )
 
                 if length_px < MIN_LENGTH_PX:
+
                     continue
 
                 length_cm = (
@@ -163,7 +196,10 @@ def _process_frame(frame):
             ),
 
         "detections":
-            detections
+            detections,
+
+        "result":
+            res
     }
 
 
@@ -185,7 +221,27 @@ def analyze_image(path):
             "Gagal baca image"
         )
 
-    return _process_frame(img)
+    result = _process_frame(
+        img
+    )
+
+    detection_image = (
+        save_detection_image(
+            img,
+            result["result"]
+        )
+    )
+
+    result.pop(
+        "result",
+        None
+    )
+
+    result[
+        "detection_image"
+    ] = detection_image
+
+    return result
 
 
 # ================= VIDEO =================
@@ -198,17 +254,24 @@ def analyze_video(path):
             f"Video tidak ditemukan: {path}"
         )
 
-    cap = cv2.VideoCapture(path)
+    cap = cv2.VideoCapture(
+        path
+    )
 
     results = []
 
     frame_count = 0
+
+    last_frame = None
+
+    last_result = None
 
     while cap.isOpened():
 
         ret, frame = cap.read()
 
         if not ret:
+
             break
 
         if frame_count % 10 == 0:
@@ -222,6 +285,10 @@ def analyze_video(path):
                 results.append(
                     result
                 )
+
+                last_frame = frame
+
+                last_result = result
 
             except Exception:
 
@@ -239,8 +306,24 @@ def analyze_video(path):
 
             "avg_length_cm": 0,
 
-            "detections": []
+            "detections": [],
+
+            "detection_image": None
         }
+
+    detection_image = None
+
+    if (
+        last_frame is not None
+        and last_result is not None
+    ):
+
+        detection_image = (
+            save_detection_image(
+                last_frame,
+                last_result["result"]
+            )
+        )
 
     return {
 
@@ -264,8 +347,11 @@ def analyze_video(path):
             ),
 
         "detections":
-            results[-1].get(
+            last_result.get(
                 "detections",
                 []
-            )
+            ),
+
+        "detection_image":
+            detection_image
     }
