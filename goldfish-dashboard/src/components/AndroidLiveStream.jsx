@@ -1,6 +1,7 @@
 import {
   useEffect,
-  useState
+  useState,
+  useRef
 } from "react";
 
 import {
@@ -21,6 +22,17 @@ export default function AndroidLiveStream() {
     detections,
     setDetections
   ] = useState([]);
+
+  const [
+    imageSize,
+    setImageSize
+  ] = useState({
+    width: 1280,
+    height: 720
+  });
+
+  const imageRef =
+    useRef(null);
 
   useEffect(() => {
 
@@ -76,6 +88,36 @@ export default function AndroidLiveStream() {
 
   }, []);
 
+  const getScaleX = () => {
+
+    if (!imageRef.current) {
+      return 1;
+    }
+
+    return (
+      imageRef.current.clientWidth /
+      imageSize.width
+    );
+  };
+
+  const getScaleY = () => {
+
+    if (!imageRef.current) {
+      return 1;
+    }
+
+    return (
+      imageRef.current.clientHeight /
+      imageSize.height
+    );
+  };
+
+  const scaleX =
+    getScaleX();
+
+  const scaleY =
+    getScaleY();
+
   return (
 
     <div className="section">
@@ -92,16 +134,41 @@ export default function AndroidLiveStream() {
 
             <div
               className="stream-container"
+              style={{
+                position: "relative"
+              }}
             >
 
               <img
+                ref={imageRef}
                 src={frameUrl}
                 alt="live-camera"
                 className="live-stream"
+                onLoad={(e) => {
+
+                  setImageSize({
+
+                    width:
+                      e.target.naturalWidth,
+
+                    height:
+                      e.target.naturalHeight
+
+                  });
+
+                }}
               />
 
               <div
                 className="overlay-layer"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  pointerEvents: "none"
+                }}
               >
 
                 {
@@ -110,44 +177,110 @@ export default function AndroidLiveStream() {
                     (
                       fish,
                       index
-                    ) => (
+                    ) => {
 
-                      <div
-                        key={index}
-                        className="fish-box"
-                        style={{
+                      const left =
+                        fish.x1 * scaleX;
 
-                          left:
-                            `${fish.x1}px`,
+                      const top =
+                        fish.y1 * scaleY;
 
-                          top:
-                            `${fish.y1}px`,
+                      const width =
+                        (fish.x2 - fish.x1)
+                        * scaleX;
 
-                          width:
-                            `${fish.x2 - fish.x1}px`,
+                      const height =
+                        (fish.y2 - fish.y1)
+                        * scaleY;
 
-                          height:
-                            `${fish.y2 - fish.y1}px`
-                        }}
-                      >
+                      return (
 
                         <div
-                          className="fish-label"
+                          key={index}
+                          className="fish-box"
+                          style={{
+
+                            position:
+                              "absolute",
+
+                            left:
+                              `${left}px`,
+
+                            top:
+                              `${top}px`,
+
+                            width:
+                              `${width}px`,
+
+                            height:
+                              `${height}px`,
+
+                            border:
+                              "2px solid #00ff88",
+
+                            boxSizing:
+                              "border-box"
+                          }}
                         >
 
-                          Fish #{index + 1}
+                          <div
+                            className="fish-label"
+                            style={{
 
-                          <br />
+                              position:
+                                "absolute",
 
-                          {
-                            fish.length_cm
-                          } cm
+                              top: "-55px",
+
+                              left: 0,
+
+                              background:
+                                "#00ff88",
+
+                              color:
+                                "#000",
+
+                              padding:
+                                "4px 8px",
+
+                              fontSize:
+                                "12px",
+
+                              fontWeight:
+                                "bold",
+
+                              borderRadius:
+                                "6px"
+                            }}
+                          >
+
+                            Fish #{index + 1}
+
+                            <br />
+
+                            Length:
+                            {" "}
+                            {fish.length_cm}
+                            cm
+
+                            <br />
+
+                            Confidence:
+                            {" "}
+
+                            {
+                              fish.confidence
+                              || 0
+                            }
+                            %
+
+                          </div>
 
                         </div>
 
-                      </div>
+                      );
 
-                    )
+                    }
                   )
 
                 }
